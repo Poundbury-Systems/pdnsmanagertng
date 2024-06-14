@@ -131,6 +131,8 @@ class Domains
             throw new \Exceptions\SemanticException();
         }
 
+        $name = trim($name);
+
         $this->db->beginTransaction();
 
         $query = $this->db->prepare('SELECT id FROM domains WHERE name=:name');
